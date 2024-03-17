@@ -1,0 +1,6 @@
+@Digital_Transformation.Api_HostAddress = http://localhost:5293
+
+GET {{Digital_Transformation.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
