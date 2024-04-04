@@ -1,1 +1,0 @@
-﻿namespace Jet.Piranha.Domain;
