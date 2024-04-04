@@ -1,21 +1,25 @@
 using Microsoft.AspNetCore.Mvc; //page 8
 using Jet.Piranha.Domain.Catalog;
-using Emerald.Tiger.Domain.Catalog;
+using Emerald.Tiger.Domain.Catalog; //I don't know why this got here but I'm too scared to remove it
+using Jet_Piranha.Data;
 
 namespace Jet.Piranha.Api.Controllers
 {
     [ApiController] //page 8
-    [Route("[controller]")]
+    [Route("/catalog")]
+    //used to be [Route("[controller]")]
     public class CatalogController : ControllerBase
     {
+        private readonly StoreContext _db;
+        public CatalogController(StoreContext db)
+        {
+            _db = db;
+        }
+
         [HttpGet]
         public IActionResult GetItems()
         {
-            var items = new List<Item>() {
-                new Item("Shirt", "Ohio State Shirt", "Nike", 29.99m),
-                new Item("Shorts", "Ohio State Shorts", "Nike", 44.99m)
-            };
-            return Ok(items);
+            return Ok(_db.Items);
         }
 
         [HttpGet("{id:int}")]
