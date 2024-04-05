@@ -1,0 +1,8 @@
+
+
+@Jet.Piranha.Api_HostAddress = http://localhost:5262
+
+GET {{Jet.Piranha.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
