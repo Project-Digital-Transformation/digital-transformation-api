@@ -1,4 +1,4 @@
-using Jet.Piranha.Domain.Catalog;
+using Jet_Piranha.Domain.Catalog;
 
 namespace Jet.Piranha.Domain.Orders
 {

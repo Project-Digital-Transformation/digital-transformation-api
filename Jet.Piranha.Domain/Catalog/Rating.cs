@@ -1,7 +1,7 @@
 using System.Net.Http.Headers;
 using System.Security;
 
-namespace Emerald.Tiger.Domain.Catalog;
+namespace Jet_Piranha.Domain;
 
 public class Rating
 {
