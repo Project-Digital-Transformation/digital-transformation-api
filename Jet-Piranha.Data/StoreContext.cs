@@ -1,4 +1,4 @@
-﻿using Jet.Piranha.Domain.Catalog;
+﻿using Jet_Piranha.Domain.Catalog;
 using Jet.Piranha.Domain.Orders; // Added this line bc Orders class is in this namespace
 using Microsoft.EntityFrameworkCore;
 

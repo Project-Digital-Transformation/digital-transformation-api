@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc; //page 8
-using Jet.Piranha.Domain.Catalog;
-using Emerald.Tiger.Domain.Catalog; //I don't know why this got here but I'm too scared to remove it
+using Jet_Piranha.Domain.Catalog;
 using Jet_Piranha.Data;
 using Microsoft.EntityFrameworkCore;
+using Jet_Piranha.Domain;
 
 
 namespace Jet.Piranha.Api.Controllers
