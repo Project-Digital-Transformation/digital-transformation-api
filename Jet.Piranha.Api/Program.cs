@@ -14,6 +14,15 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<StoreContext>(options => options.UseSqlite("Data Source=../Registrar.sqlite",
 b => b.MigrationsAssembly("Jet.Piranha.Api") )
 );
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -22,8 +31,17 @@ var app = builder.Build();
 
 app.UseRouting();
 
-// Use authorization if needed. For now, it's commented out since your controller doesn't seem to require it.
-// app.UseAuthorization();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseCors();
+app.UseAuthorization();
 
 // Map controllers to the application's request pipeline.
 app.MapControllers();
