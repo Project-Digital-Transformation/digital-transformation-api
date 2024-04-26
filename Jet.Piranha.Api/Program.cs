@@ -6,13 +6,24 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.Extensions.Options;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+string authority = builder.Configuration["Auth0:Authority"] ??
+    throw new ArgumentNullException("Auth0:Authority");
+
+string audience = builder.Configuration["Auth0:Audience"] ??
+    throw new ArgumentNullException("Auth0:Audience");
+
+string storeConnectionString = builder.Configuration.GetConnectionString("StoreConnection") ??
+    throw new ArgumentNullException("ConnectionString:StoreConnection"); //page 9
+
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<StoreContext>(options => options.UseSqlite("Data Source=../Registrar.sqlite",
-b => b.MigrationsAssembly("Jet.Piranha.Api") )
+builder.Services.AddDbContext<StoreContext>(options => 
+options.UseSqlServer(storeConnectionString,
+b => b.MigrationsAssembly("Jet.Piranha.Api"))
 );
 builder.Services.AddCors(options =>
 {
@@ -47,3 +58,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run(); // This runs the application and listens for incoming HTTP requests.
+
+
