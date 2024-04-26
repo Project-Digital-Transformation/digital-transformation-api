@@ -29,7 +29,8 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins("http://localhost:3000")
+        builder.WithOrigins("http://localhost:3000",
+        "https://jet-piranha-0865b2f0f.1.azurestaticapps.net") //app won't deploy, i waited for like 30  minutes... not sure what's wrong
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
