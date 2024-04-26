@@ -1,4 +1,4 @@
-using Jet.Piranha.Domain.Catalog;
+using Jet_Piranha.Domain.Catalog;
 using Microsoft.EntityFrameworkCore;
 
 namespace Jet_Piranha.Data

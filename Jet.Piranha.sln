@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jet.Piranha.Domain", "Jet.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jet-Piranha.Data", "Jet-Piranha.Data\Jet-Piranha.Data.csproj", "{2FE3FF0E-717D-4D37-9F02-D96D832A0340}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CD63B5A8-4F7B-420A-9AEE-8404ABF9C4F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jet_Piranha.Domain.Tests", "tests\Jet_Piranha.Domain.Tests\Jet_Piranha.Domain.Tests.csproj", "{EAF0C406-FEF7-47AC-AF03-3E77320B380C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,12 @@ Global
 		{2FE3FF0E-717D-4D37-9F02-D96D832A0340}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FE3FF0E-717D-4D37-9F02-D96D832A0340}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FE3FF0E-717D-4D37-9F02-D96D832A0340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF0C406-FEF7-47AC-AF03-3E77320B380C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF0C406-FEF7-47AC-AF03-3E77320B380C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF0C406-FEF7-47AC-AF03-3E77320B380C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF0C406-FEF7-47AC-AF03-3E77320B380C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EAF0C406-FEF7-47AC-AF03-3E77320B380C} = {CD63B5A8-4F7B-420A-9AEE-8404ABF9C4F1}
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc; //page 8
-using Jet.Piranha.Domain.Catalog;
-using Emerald.Tiger.Domain.Catalog; //I don't know why this got here but I'm too scared to remove it
+using Jet_Piranha.Domain.Catalog;
 using Jet_Piranha.Data;
+using Microsoft.EntityFrameworkCore;
+using Jet_Piranha.Domain;
+
 
 namespace Jet.Piranha.Api.Controllers
 {
@@ -28,7 +30,7 @@ namespace Jet.Piranha.Api.Controllers
         public IActionResult GetItem(int id)
         {
             var item = _db.Items.Find(id);
-            if (item = null)
+            if (item == null)
             {
                 return NotFound();
             }
@@ -50,7 +52,7 @@ namespace Jet.Piranha.Api.Controllers
         public IActionResult PostRating(int id, [FromBody] Rating rating)
         {
             var item = _db.Items.Find(id);
-            if (item = null)
+            if (item == null)
             {
                 return NotFound();
             }
@@ -63,12 +65,12 @@ namespace Jet.Piranha.Api.Controllers
         [HttpPut("{id:int}")]
         public IActionResult Put(int id, Item item)
         {
-            if (id ≠ item.Id)
+            if (id != item.Id)
             {
                 return BadRequest();
             }
 
-            if (_db.Items.Find(id) = null)
+            if (_db.Items.Find(id) == null)
             {
                 return NotFound();
             }
@@ -82,7 +84,7 @@ namespace Jet.Piranha.Api.Controllers
         public IActionResult Delete(int id)
         {
             var item = _db.Items.Find(id);
-            if (item = null)
+            if (item == null)
             {
                 return NotFound();
             }

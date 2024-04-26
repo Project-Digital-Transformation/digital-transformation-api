@@ -1,10 +1,9 @@
 using System;
-using Emerald.Tiger.Domain.Catalog;
 using System.Runtime.Versioning; //page 5
 
 
 
-namespace Jet.Piranha.Domain.Catalog
+namespace Jet_Piranha.Domain.Catalog
 {
     public class Item //page 5
     {
